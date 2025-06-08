@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เจาะลึกเทรนด์ตลาด: กรณีศึกษาแบรนด์ INGU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #E6DDC3;
+            color: #333333;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #F7F7F7;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #C8BBA0;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #6F7B8C;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #5C6656;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #6F7B8C;
+            border-bottom: 1px solid #C8BBA0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #5C6656;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            background-color: #E0E0D0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid #A89F95;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .product-card {
+            background-color: #F5F5F0;
+            border: 1px solid #C8BBA0;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+        .product-card img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .product-card h4 {
+            color: #6F7B8C;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        .product-card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #A89F95;
+        }
+        ul.list-none li strong {
+            color: #5C6656;
+        }
+        ul.list-none li span.text-red-500 {
+            color: #804024;
+        }
+        ul.list-none li span.text-green-600 {
+            color: #5C6656;
+        }
+        ul.list-none li span.text-green-800 {
+            color: #5C6656;
+        }
+        ul.list-none li span.font-bold {
+            color: #6F7B8C;
+        }
+        h3.text-red-600 {
+            color: #804024;
+        }
+        h3.text-green-700 {
+            color: #5C6656;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #C8BBA0;
+            color: #808080;
+            font-size: 0.9em;
+        }
+        .bg-gray-100 {
+            background-color: #EFEFEA;
+        }
+        .bg-red-50 {
+            background-color: #FFEAE0;
+        }
+        .bg-green-50 {
+            background-color: #E0F5E0;
+        }
+        .border-red-300 {
+            border-color: #D09080;
+        }
+        .border-green-300 {
+            border-color: #A0B09C;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #A89F95;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #808080;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold">เจาะลึกเทรนด์ตลาดสกินแคร์ไทย 2025</h1>
+            <p class="text-xl">กรณีศึกษา: การเติบโตของแบรนด์ INGU และกลยุทธ์ที่นักการตลาดต้องรู้</p>
+        </header>
+
+        <main class="space-y-8">
+
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-4">📈 บริบทตลาด: เมื่อผู้บริโภคฉลาดขึ้น (The Rise of Skinellectuals)</h2>
+                <p class="text-gray-600 mb-6">ตลาดสกินแคร์ไทยไม่ได้ขับเคลื่อนด้วยการโฆษณาเพียงอย่างเดียวอีกต่อไป แต่เกิดจากความต้องการของผู้บริโภคยุคใหม่ที่ศึกษาข้อมูลส่วนผสม (Skinellectuals) มองหาความโปร่งใส และต้องการผลิตภัณฑ์ที่แก้ปัญหาผิวได้อย่างแท้จริง เทรนด์นี้เปิดโอกาสให้แบรนด์ที่มีความจริงใจและมีข้อมูลวิทยาศาสตร์รองรับอย่าง INGU เติบโตอย่างก้าวกระโดด</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="w-full">
+                         <h3 class="text-xl font-semibold text-center mb-2 text-gray-700">การเติบโตของตลาดสกินแคร์ในไทย</h3>
+                        <div class="chart-container">
+                            <canvas id="marketGrowthChart"></canvas>
+                        </div>
+                         <p class="text-center text-sm text-gray-500 mt-2">มูลค่าตลาด (พันล้านบาท) เติบโตต่อเนื่อง</p>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-semibold text-center mb-2 text-gray-700">ปัจจัยที่ผู้บริโภคให้ความสำคัญ</h3>
+                         <div class="chart-container">
+                            <canvas id="consumerPriorityChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">ประสิทธิภาพและความโปร่งใสคือหัวใจสำคัญ</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-4">💡 ถอดรหัสความสำเร็จของ INGU</h2>
+                <p class="text-gray-600 mb-6">ความสำเร็จของ INGU ไม่ได้เกิดขึ้นโดยบังเอิญ แต่เกิดจากการวางกลยุทธ์ที่เข้าใจผู้บริโภคอย่างลึกซึ้ง โดยมีแกนหลักคือการสร้างความน่าเชื่อถือผ่านการให้ความรู้ ซึ่งนำไปสู่ความไว้วางใจในผลิตภัณฑ์</p>
+                 <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                    <div class="p-4 bg-gray-100 rounded-lg w-full md:w-1/4">
+                        <div class="text-4xl mb-2">🎓</div>
+                        <h4 class="font-semibold text-gray-800">ผู้ก่อตั้งคือผู้ให้ความรู้</h4>
+                        <p class="text-sm text-gray-600">(Founder as Educator)</p>
+                    </div>
+                    <div class="flow-arrow transform md:rotate-0 rotate-90">→</div>
+                    <div class="p-4 bg-gray-100 rounded-lg w-full md:w-1/4">
+                        <div class="text-4xl mb-2">🔬</div>
+                        <h4 class="font-semibold text-gray-800">สร้างคอนเทนต์เชิงวิทยาศาสตร์</h4>
+                        <p class="text-sm text-gray-600">(Science-based Content)</p>
+                    </div>
+                    <div class="flow-arrow transform md:rotate-0 rotate-90">→</div>
+                    <div class="p-4 bg-gray-100 rounded-lg w-full md:w-1/4">
+                        <div class="text-4xl mb-2">🤝</div>
+                        <h4 class="font-semibold text-gray-800">เกิดเป็นความไว้วางใจ</h4>
+                        <p class="text-sm text-gray-600">(Building Trust)</p>
+                    </div>
+                     <div class="flow-arrow transform md:rotate-0 rotate-90">→</div>
+                    <div class="p-4 bg-gray-100 rounded-lg w-full md:w-1/4">
+                        <div class="text-4xl mb-2">🌿</div>
+                        <h4 class="font-semibold text-gray-800">เชื่อมั่นในผลิตภัณฑ์</h4>
+                        <p class="text-sm text-gray-600">(Product Confidence)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                 <h2 class="text-2xl font-bold mb-4">ปรัชญา "Stop Skincare Overdose"</h2>
+                 <p class="text-gray-600 mb-6">INGU ท้าทายความเชื่อเดิมๆ ที่ว่า "ยิ่งเยอะยิ่งดี" ด้วยการนำเสนอแนวคิด "ใช้เท่าที่จำเป็น" ซึ่งตอบโจทย์ปัญหาผิวของคนจำนวนมากที่เกิดจากการใช้สกินแคร์มากเกินไป</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                     <div class="border-2 border-red-300 p-4 rounded-lg bg-red-50">
+                        <h3 class="text-xl font-semibold mb-2 text-center">❌ ความเชื่อแบบเดิม (Overdose)</h3>
+                        <ul class="list-none space-y-2 text-gray-700">
+                           <li class="flex items-center"><span class="mr-2">»</span>Pre-serum</li>
+                           <li class="flex items-center"><span class="mr-2">»</span>Toner/Essence</li>
+                           <li class="flex items-center"><span class="mr-2">»</span>Whitening Serum</li>
+                           <li class="flex items-center"><span class="mr-2">»</span>Acne Serum</li>
+                           <li class="flex items-center"><span class="mr-2">»</span>Anti-aging Serum</li>
+                           <li class="flex items-center"><span class="mr-2">»»</span>Moisturizer</li>
+                           <li class="flex items-center"><span class="mr-2">»</span>Sleeping Mask</li>
+                        </ul>
+                        <p class="text-center mt-4 font-semibold text-red-500">อาจทำร้ายเกราะป้องกันผิว</p>
+                     </div>
+                     <div class="border-2 border-green-300 p-4 rounded-lg bg-green-50">
+                        <h3 class="text-xl font-semibold mb-2 text-center">✅ แนวทางของ INGU (Essentials)</h3>
+                        <ul class="list-none space-y-2 text-gray-700">
+                           <li class="flex items-center"><span class="font-bold text-xl mr-2">1.</span><strong>ล้าง (Cleanse)</strong>: ทำความสะอาดอย่างอ่อนโยน</li>
+                           <li class="flex items-center"><span class="font-bold text-xl mr-2">2.</span><strong>บำรุง (Moisturize)</strong>: เสริมความชุ่มชื้นและเกราะป้องกันผิว</li>
+                           <li class="flex items-center"><span class="font-bold text-xl mr-2">3.</span><strong>ปกป้อง (Protect)</strong>: ปกป้องผิวจากแสงแดด</li>
+                        </ul>
+                        <p class="text-center mt-4 font-semibold text-green-600">ผิวแข็งแรงอย่างยั่งยืน</p>
+                     </div>
+                 </div>
+            </section>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <section class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                     <h2 class="text-2xl font-bold mb-4">🧬 กลยุทธ์ผลิตภัณฑ์และบทสรุป</h2>
+                     <p class="text-gray-600 mb-6">หัวใจสำคัญของ INGU คือผลิตภัณฑ์ที่สอดคล้องกับปรัชญาของแบรนด์ เน้นส่วนผสมที่จำเป็นและโปร่งใส เพื่อสร้างผลลัพธ์ที่พิสูจน์ได้จริง</p>
+                     <div class="space-y-4">
+                         <div class="p-4 bg-[#F5F5F0] rounded-lg">
+                            <h4 class="font-semibold text-gray-800">1. Hydrating Gentle Cleanser</h4>
+                            <p class="text-sm text-gray-600">คลีนเซอร์ที่ทำความสะอาดอย่างหมดจดแต่อ่อนโยน ไม่ทำลายเกราะป้องกันผิว (Skin Barrier)</p>
+                        </div>
+                        <div class="p-4 bg-[#F5F5F0] rounded-lg">
+                            <h4 class="font-semibold text-gray-800">2. Green Tea Calming Cream</h4>
+                            <p class="text-sm text-gray-600">มอยเจอร์ไรเซอร์ที่เน้นการปลอบประโลมผิว ลดการระคายเคือง และเสริมความชุ่มชื้น</p>
+                        </div>
+                        <div class="p-4 bg-[#F5F5F0] rounded-lg">
+                            <h4 class="font-semibold text-gray-800">3. Super-Light Soothing Sunscreen</h4>
+                            <p class="text-sm text-gray-600">ครีมกันแดดที่เนื้อบางเบา สบายผิว แต่ปกป้องผิวได้อย่างมีประสิทธิภาพ</p>
+                        </div>
+                     </div>
+                </section>
+                
+                <section class="bg-[#6F7B8C] text-white p-6 rounded-lg shadow-md flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold mb-4">🏆 กุญแจสู่ความสำเร็จ</h2>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-center"><span class="mr-3 text-2xl">✓</span>สร้างแบรนด์จากความน่าเชื่อถือ</li>
+                        <li class="flex items-center"><span class="mr-3 text-2xl">✓</span>แก้ปัญหาที่แท้จริงของผู้บริโภค</li>
+                        <li class="flex items-center"><span class="mr-3 text-2xl">✓</span>ใช้ความโปร่งใสเป็นเครื่องมือสำคัญ</li>
+                        <li class="flex items-center"><span class="mr-3 text-2xl">✓</span>สร้าง Community ผ่านการให้ความรู้</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <section class="bg-white p-6 rounded-lg shadow-md text-center">
+            <h2 class="text-2xl font-bold mb-4">สนใจสร้างแบรนด์เครื่องสำอางของคุณ?</h2>
+            <p class="text-gray-600 mb-6">ปรึกษา Aqua Goal Laboratories ผู้เชี่ยวชาญด้านการสร้างแบรนด์เครื่องสำอางและรับผลิต (OEM) ด้วยประสบการณ์มากกว่า 22 ปี</p>
+            <a href="tel:029559311" class="cta-button">
+                คลิกเพื่อติดต่อ
+            </a>
+        </section>
+
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Interactive Infographic by Gemini. For Educational & Demonstration Purposes.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const mujiPalette = ['#5C6656', '#6F7B8C', '#A89F95', '#C8BBA0']; /* Deeper Muted Green, Deeper Soft Blue-gray, Deeper Muted Tone, Deeper Light Muted Gray/Beige */
+        const tooltipCallback = {
+            title: function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                }
+                return label;
+            }
+        };
+
+        const marketGrowthChartCtx = document.getElementById('marketGrowthChart').getContext('2d');
+        new Chart(marketGrowthChartCtx, {
+            type: 'line',
+            data: {
+                labels: ['2022', '2023', '2024 (คาดการณ์)', '2025 (คาดการณ์)'],
+                datasets: [{
+                    label: 'มูลค่าตลาด (พันล้านบาท)',
+                    data: [235, 258, 283, 314],
+                    borderColor: mujiPalette[0],
+                    backgroundColor: 'rgba(92, 102, 86, 0.2)', /* Deeper Muted Green with transparency */
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { 
+                        callbacks: tooltipCallback 
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) { return value + 'B'; }
+                        }
+                    }
+                }
+            }
+        });
+        
+        const consumerPriorityChartCtx = document.getElementById('consumerPriorityChart').getContext('2d');
+        const consumerLabels = [
+            'ประสิทธิภาพ', 
+            ['ความโปร่งใส', 'ของส่วนผสม'],
+            'ราคา', 
+            'ชื่อเสียงแบรนด์'
+        ];
+
+        new Chart(consumerPriorityChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: consumerLabels,
+                datasets: [{
+                    label: 'ปัจจัยสำคัญ',
+                    data: [45, 30, 15, 10],
+                    backgroundColor: mujiPalette,
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#5C6656', /* Deeper Muted Green for legend text */
+                        }
+                    },
+                    tooltip: { 
+                        callbacks: tooltipCallback 
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
